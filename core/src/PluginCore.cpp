@@ -7,12 +7,13 @@ namespace polymorph::engine::api
 {
     PluginCore::PluginCore(config::XmlNode &data, Engine &game,
                            std::string PluginsPath)
-            : APlugin(data, game, PluginsPath)
+            : APlugin(data, game, PluginsPath), _inputHandler(game.getPluginManager())
     {
 
     }
     void PluginCore::preUpdateInternalSystems(std::shared_ptr<Scene> &scene)
     {
+        _inputHandler.update(scene);
     }
 
     void PluginCore::updateInternalSystems(std::shared_ptr<Scene> &scene)
