@@ -4,4 +4,5 @@
  * 
  */
 
-#include "../Scripts/XComponent.hpp"
+#include "input/keyboard.hpp"
+#include "input/mouse.hpp"
